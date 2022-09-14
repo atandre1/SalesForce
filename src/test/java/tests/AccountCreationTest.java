@@ -1,4 +1,11 @@
 package tests;
 
-public class AccountCreationTest {
+import org.testng.annotations.Test;
+
+public class AccountCreationTest extends BaseTest{
+
+    @Test
+    public void createAccount() {
+
+    }
 }
