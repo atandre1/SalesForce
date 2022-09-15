@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 import pages.LoginPage;
+import pages.NewAccountPage;
+import pages.NewContactPage;
 
 import java.time.Duration;
 
@@ -15,6 +17,8 @@ public class BaseTest {
 
     WebDriver driver;
     LoginPage loginPage;
+    NewContactPage newContactPage;
+    NewAccountPage newAccountPage;
 
     @Parameters({"browser"})
     @BeforeMethod
@@ -32,9 +36,13 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
+        loginPage = new LoginPage(driver);
+        newContactPage = new NewContactPage(driver);
+        newAccountPage = new NewAccountPage(driver);
+
     }
 
-    @AfterMethod(alwaysRun = true)  // запускать всегда
+    @AfterMethod(alwaysRun = true)
     public void close() {
         if (driver != null) {
             driver.quit();
