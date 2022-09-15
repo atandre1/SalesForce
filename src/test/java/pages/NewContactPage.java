@@ -24,7 +24,7 @@ public class NewContactPage extends BasePage {
         driver.findElement(NEW_BUTTON).click();
     }
 
-    public void create(String firstName, String lastName, String salutation, String phone,  String homePhone,  String mobilePhone, String title, String department,
+    public void create(String firstName, String lastName, String salutation, String phone, String homePhone, String mobilePhone, String title, String department,
                        String email, String birthdate, String leadSource, String mailingStreet) {
         new Input("First Name", driver).write(firstName);
         new Input("Last Name", driver).write(lastName);
